@@ -1,21 +1,38 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.find(:all)
-    #@bookings = Booking.find_all_by_customer_id (3)
+    startdate = Date.today
+    enddate = Date.today+4
+    @bookings_arrival = Booking.find(:all, :conditions => {:arrival => startdate..enddate})
+    @bookings_departure = Booking.find(:all, :conditions => {:departure => startdate..enddate})
   end
   def new
-    @bookings = Booking.new
+    @booking = Booking.new
   end
   def create
-    @bookings = Booking.new(params[:booking])
+    @booking = Booking.new(params[:booking])
+    if @booking.save(params[:booking])
+     redirect_to :action => :index
+   else
+     render :action => :new
+   end
   end
   def show
-    @bookings = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
   def edit 
-    @bookings = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
   def update
-    @bookings = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
+    if @booking.update_attributes(params[:booking])
+      redirect_to :action => :index
+    else
+      render :action => :edit
   end
 end
+end
+
+
+
+#@bookings = Booking.find(:all, :conditions => {:arrival => })
+#@bookings = Booking.find(:all, :order => "arrival asc")

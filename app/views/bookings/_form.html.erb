@@ -1,24 +1,31 @@
-<%= form_for(@bookings) do |f| %>
+<%= form_for(@booking) do |f| %>
 
+<div class = "field">
 <%= f.label :customer_id %><br />
 <%= f.text_field :customer_id %>
-
+</div>
+<div class = "field">
 <%= f.label :room %><br />
 <%= f.text_field :room %>
-
+</div>
+<div class = "field">
 <%= f.label :text %><br />
 <%= f.text_field :text %>
-
+</div>
+<div class = "field">
 <%= f.label :arrival %><br />
-<%= f.text_field :arrival %>
-
+<%= f.date_select :arrival %>
+</div>
+<div class = "field">
 <%= f.label :departure %><br />
-<%= f.text_field :departure %>
-
+<%= f.date_select :departure %>
+</div>
+<div class = "field">
 <%= f.label :pickup %><br />
-<%= f.text_field :pickup %>
+<%= f.datetime_select :pickup %>
+</div>
 
-<br />
+<br >
 
 <%= f.submit %>
 

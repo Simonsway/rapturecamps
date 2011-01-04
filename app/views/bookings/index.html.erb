@@ -1,5 +1,6 @@
 <h1>Rapturecamps Arrivals and Departures</h1>
 
+<h2>Arrivals</h2>
 <table border="1" cellspacing="12" cellpadding="5">
 <tr>	
 	<th>Customer ID</th>
@@ -9,7 +10,7 @@
 	<th>Departure</td>
 	<th>Pickup</td>
 
-<% @bookings.each do |booking| %>
+<% @bookings_arrival.each do |booking| %>
 <tr>
 	<td><%= booking.customer_id %></td>
 	<td><%= booking.room %></td>
@@ -17,6 +18,36 @@
 	<td><%= booking.arrival %></td>
 	<td><%= booking.departure %></td>
 	<td><%= booking.pickup %></td>
+	<td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+	<td><%= link_to 'Delete', booking, :confirm => 'Are you sure?', :method => :delete %></td>
+</tr>
+
+<% end %>
+</table>
+
+<hr />
+
+<h2>Departures</h2>
+
+<table border="1" cellspacing="12" cellpadding="5">
+<tr>	
+	<th>Customer ID</th>
+	<th>Room</td>
+	<th>Info</td>
+	<th>Arriving</td>
+	<th>Departure</td>
+	<th>Pickup</td>
+
+<% @bookings_departure.each do |booking| %>
+<tr>
+	<td><%= booking.customer_id %></td>
+	<td><%= booking.room %></td>
+	<td><%= booking.text %></td>
+	<td><%= booking.arrival %></td>
+	<td><%= booking.departure %></td>
+	<td><%= booking.pickup %></td>
+	<td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+	<td><%= link_to 'Delete', booking, :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>
 
 <% end %>
