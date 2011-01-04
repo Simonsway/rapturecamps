@@ -2,6 +2,7 @@ class CreateBookings < ActiveRecord::Migration
   def self.up
     create_table :bookings do |t|
       t.integer :customer_id
+      t.string :customer_name
       t.string :room
       t.string :text
       t.date :arrival

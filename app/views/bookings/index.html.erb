@@ -4,6 +4,7 @@
 <table border="1" cellspacing="12" cellpadding="5">
 <tr>	
 	<th>Customer ID</th>
+	<th>Customer Name</th>
 	<th>Room</td>
 	<th>Info</td>
 	<th>Arriving</td>
@@ -13,6 +14,7 @@
 <% @bookings_arrival.each do |booking| %>
 <tr>
 	<td><%= booking.customer_id %></td>
+	<td><%= booking.customer_name %></td>
 	<td><%= booking.room %></td>
 	<td><%= booking.text %></td>
 	<td><%= booking.arrival %></td>
@@ -24,7 +26,7 @@
 
 <% end %>
 </table>
-
+<br />
 <hr />
 
 <h2>Departures</h2>
@@ -32,6 +34,7 @@
 <table border="1" cellspacing="12" cellpadding="5">
 <tr>	
 	<th>Customer ID</th>
+	<th>Customer Name</th>
 	<th>Room</td>
 	<th>Info</td>
 	<th>Arriving</td>
@@ -41,6 +44,7 @@
 <% @bookings_departure.each do |booking| %>
 <tr>
 	<td><%= booking.customer_id %></td>
+	<td><%= booking.customer_name %></td>
 	<td><%= booking.room %></td>
 	<td><%= booking.text %></td>
 	<td><%= booking.arrival %></td>

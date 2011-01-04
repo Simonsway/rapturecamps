@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def index
     startdate = Date.today
-    enddate = Date.today+4
+    enddate = Date.today+7
     @bookings_arrival = Booking.find(:all, :conditions => {:arrival => startdate..enddate})
     @bookings_departure = Booking.find(:all, :conditions => {:departure => startdate..enddate})
   end

@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(:version => 20110103174839) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "customer_id"
+    t.string   "customer_name"
     t.string   "room"
     t.string   "text"
     t.date     "arrival"
