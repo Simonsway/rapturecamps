@@ -2,6 +2,8 @@ Rapturecamps::Application.routes.draw do
   
   resources :customers, :bookings
   
+  root :to => "bookings#index"
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
