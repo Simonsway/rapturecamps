@@ -1,0 +1,26 @@
+<%= form_for(@bookings) do |f| %>
+
+<%= f.label :customer_id %><br />
+<%= f.text_field :customer_id %>
+
+<%= f.label :room %><br />
+<%= f.text_field :room %>
+
+<%= f.label :text %><br />
+<%= f.text_field :text %>
+
+<%= f.label :arrival %><br />
+<%= f.text_field :arrival %>
+
+<%= f.label :departure %><br />
+<%= f.text_field :departure %>
+
+<%= f.label :pickup %><br />
+<%= f.text_field :pickup %>
+
+<br />
+
+<%= f.submit %>
+
+<% end %>
+

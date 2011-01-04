@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  customer_id: 1
+  room: MyString
+  text: MyString
+  arrival: 2011-01-03
+  departure: 2011-01-03
+  pickup: 2011-01-03 18:48:39
+
+two:
+  customer_id: 1
+  room: MyString
+  text: MyString
+  arrival: 2011-01-03
+  departure: 2011-01-03
+  pickup: 2011-01-03 18:48:39
