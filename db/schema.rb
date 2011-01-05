@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110103174839) do
     t.date     "arrival"
     t.date     "departure"
     t.datetime "pickup"
+    t.string   "flight"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

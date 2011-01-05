@@ -8,6 +8,7 @@ class CreateBookings < ActiveRecord::Migration
       t.date :arrival
       t.date :departure
       t.datetime :pickup
+      t.string :flight
 
       t.timestamps
     end

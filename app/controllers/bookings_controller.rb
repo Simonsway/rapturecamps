@@ -30,9 +30,10 @@ class BookingsController < ApplicationController
       render :action => :edit
   end
 end
+  def destroy
+    @booking = Booking.find (params[:id])
+    @booking.destroy
+    redirect_to :action => :index
+  end
 end
 
-
-
-#@bookings = Booking.find(:all, :conditions => {:arrival => })
-#@bookings = Booking.find(:all, :order => "arrival asc")

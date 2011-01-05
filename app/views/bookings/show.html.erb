@@ -1,9 +1,21 @@
-<%= @booking.customer_id %>
-<%= @booking.room %>
-<%= @booking.text %>
-<%= @booking.arrival %>
-<%= @booking.departure %>
-<%= @booking.pickup %>
+<table border="1" cellspacing="9" cellpadding="3">
+<tr>	
+	<th>Customer ID</th>
+	<th>Customer Name</th>
+	<th>Room</td>
+	<th>Info</td>
+	<th>Arriving</td>
+	<th>Pickup</td>
+	<th>Flight</td>
 
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', booking_path %>
+<tr>
+	<td><%= @booking.customer_id %></td>
+	<td><%= @booking.customer_name %></td>
+	<td><%= @booking.room %></td>
+	<td><%= @booking.text %></td>
+	<td><%= @booking.arrival %></td>
+	<td><%= @booking.pickup %></td>
+	<td><%= @booking.flight %></td>
+</tr>
+
+</table>
