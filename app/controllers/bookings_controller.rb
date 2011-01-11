@@ -8,6 +8,9 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
   end
+  def list
+    @booking = Booking.find(:all)
+  end
   def create
     @booking = Booking.new(params[:booking])
     if @booking.save(params[:booking])
@@ -36,4 +39,6 @@ end
     redirect_to :action => :index
   end
 end
+
+
 

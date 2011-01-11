@@ -5,3 +5,19 @@ div.field, div.actions {
 #buttons {
 	margin-bottom: 10xpx;
 }
+
+
+table {
+width:90%;
+border:1px solid #e5eff8;
+margin:1em auto;
+border-collapse:collapse;
+font: 14px "Helvetica", Arial;
+}
+
+td {
+color:#678197;
+border:1px solid #e5eff8;
+padding:.3em 1em;
+text-align:center;
+}

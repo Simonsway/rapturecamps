@@ -1,7 +1,11 @@
 Rapturecamps::Application.routes.draw do
   
-  resources :bookings
-  resources :lists
+  #resources :bookings
+  resources :bookings do
+    collection do
+      get 'list'
+    end
+  end
   
   root :to => "bookings#index"
   
