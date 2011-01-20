@@ -14,7 +14,7 @@ class Booking < ActiveRecord::Base
 protected
   
   def validate
-    if arrival <= departure
+    if arrival >= departure
       errors.add(:arrival, " and departure dates seems that invalid")
     end
   end
