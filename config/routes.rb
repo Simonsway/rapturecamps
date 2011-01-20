@@ -1,6 +1,11 @@
 Rapturecamps::Application.routes.draw do
   
-  #resources :bookings
+  resources :customers do
+    member do 
+      get 'bookings'
+    end
+  end
+  
   resources :bookings do
     collection do
       get 'list'
@@ -8,9 +13,6 @@ Rapturecamps::Application.routes.draw do
   end
   
   root :to => "bookings#index"
-  
-
-  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

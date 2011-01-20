@@ -1,42 +1,38 @@
+<%= error_messages_for @booking %>
+
 <%= form_for(@booking) do |f| %>
-
-<div class = "field">
-<%= f.label :customer_id %><br />
-<%= f.text_field :customer_id %>
-</div>
-<div class = "field">
-<%= f.label :customer_name %><br />
-<%= f.text_field :customer_name %>
-</div>
-<div class = "field">
-<%= f.label :room %><br />
-<%= f.text_field :room %>
-</div>
-<div class = "field">
-<%= f.label :text %><br />
-<%= f.text_field :text %>
-</div>
-<div class = "field">
-<%= f.label :arrival %><br />
-<%= f.date_select :arrival %>
-</div>
-<div class = "field">
-<%= f.label :departure %><br />
-<%= f.date_select :departure %>
-</div>
-<div class = "field">
-<%= f.label :pickup %><br />
-<%= f.datetime_select :pickup %>
-</div>
-<div class = "field">
-<%= f.label :flight %><br />
-<%= f.text_field :flight %>
-</div>
-
-
-<br >
-
-<%= f.submit %>
-
+  <div class = "field">
+    <%= f.label :customer_id %><br />
+    <%= f.select :customer_id, Customer.for_select %>
+  </div>
+  <div class = "field">
+    <%= f.label :room %><br />
+    <%= f.text_field :room %>
+  </div>
+  <div class = "field">
+    <%= f.label :text %><br />
+    <%= f.text_field :text %>
+  </div>
+  <div class = "field">
+    <%= f.label :arrival %><br />
+    <%= f.date_select :arrival %>
+  </div>
+  <div class = "field">
+    <%= f.label :departure %><br />
+    <%= f.date_select :departure %>
+  </div>
+  <div class = "field">
+    <%= f.label :pickup %><br />
+    <%= f.datetime_select :pickup %>
+  </div>
+  <div class = "field">
+    <%= f.label :flight %><br />
+    <%= f.text_field :flight %>
+  </div>
+  <div class = "field">
+    <%= f.label :camp_id %><br />
+    <%= f.select :camp_id, Camp.for_select, {}, :size => 2 %>
+  </div>
+  <br >
+  <%= f.submit %>
 <% end %>
-

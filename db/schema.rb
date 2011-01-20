@@ -10,11 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110103174839) do
+ActiveRecord::Schema.define(:version => 20110120191711) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "customer_id"
-    t.string   "customer_name"
     t.string   "room"
     t.string   "text"
     t.date     "arrival"
@@ -23,10 +22,23 @@ ActiveRecord::Schema.define(:version => 20110103174839) do
     t.string   "flight"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "camp_id"
+  end
+
+  create_table "camps", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "customers", :force => true do |t|
     t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "country"
+    t.string   "postcode"
+    t.string   "tel"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

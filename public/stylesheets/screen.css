@@ -3,7 +3,7 @@ div.field, div.actions {
 }
 
 #buttons {
-	margin-bottom: 10xpx;
+	margin-bottom: 10px;
 }
 
 
@@ -21,3 +21,9 @@ border:1px solid #e5eff8;
 padding:.3em 1em;
 text-align:center;
 }
+
+.admin_links a {margin-right: 10px;}
+
+.error_messages {color: red; font-weight: bold; margin-bottom: 5px;}
+
+.field_with_errors {display: inline; color: #f00; font-weight: bold;}

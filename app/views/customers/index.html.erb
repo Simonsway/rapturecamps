@@ -1,0 +1,38 @@
+<h1>Customers</h1>
+<div class="admin_links">
+  <%= link_to 'Add customer', new_customer_path %>
+  <%= link_to 'Add booking', new_booking_path %>
+  <%= link_to 'Bookings list', list_bookings_path %>
+  <%= link_to 'Index', bookings_path %>
+</div>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Code</th>
+    <th>Phone</th>
+    <th>Email</th>
+  </tr>
+  <% @objects.each do |obj| %>
+    <tr>
+      <td><%= obj.id %></td>
+      <td><%= obj.name %></td>
+      <td><%= obj.address %></td>
+      <td><%= obj.city %></td>
+      <td><%= obj.country %></td>
+      <td><%= obj.postcode %></td>
+      <td><%= obj.tel %></td>
+      <td><%= obj.email %></td>
+      <td class="admin_links">
+        <%= link_to 'All bookings', bookings_customer_url(obj) %>
+        <%= link_to 'Edit', edit_customer_path(obj) %>
+        <%= link_to 'Delete', obj, :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br />
+<hr />

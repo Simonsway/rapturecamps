@@ -1,0 +1,29 @@
+<table border="1">
+  <tr>	
+    <th>Id</th>
+    <th>Customer Name</th>
+    <th>Room</td>
+    <th>Info</td>
+    <th>Arriving</td>
+    <th>Departure</td>
+    <th>Pickup</td>
+    <th>Flight</td>
+    <th></td>
+    <th></td>
+  </tr>
+  
+  <% items.each do |booking| %>
+    <tr>
+      <td><%= booking.id %></td>
+      <td><%= link_to(booking.customer.name, edit_customer_path(booking.customer)) if booking.customer %></td>
+      <td><%= booking.room %></td>
+      <td><%= booking.text %></td>
+      <td><%= booking.arrival %></td>
+      <td><%= booking.departure %></td>
+      <td><%= booking.pickup %></td>
+      <td><%= booking.flight %></td>
+      <td><%= booking.camp.name if booking.camp %></td>
+      <td class="admin_links"><%= link_to 'Edit', edit_booking_path(booking) %><%= link_to 'Delete', booking, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

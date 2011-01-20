@@ -1,0 +1,10 @@
+<h1>Bookings</h1>
+
+<div class="admin_links">
+  <%= link_to 'Add booking', new_booking_path %>
+  <%= link_to 'Add customer', new_customer_path %>
+  <%= link_to 'Customers list', customers_path %>
+  <%= link_to 'Index', bookings_path %>
+</div>
+
+<%= render :partial => "bookings", :locals => {:items => @bookings} %>

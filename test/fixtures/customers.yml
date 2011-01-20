@@ -2,6 +2,18 @@
 
 one:
   name: MyString
+  address: MyString
+  city: MyString
+  country: MyString
+  postcode: MyString
+  tel: MyString
+  email: MyString
 
 two:
   name: MyString
+  address: MyString
+  city: MyString
+  country: MyString
+  postcode: MyString
+  tel: MyString
+  email: MyString
