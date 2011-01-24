@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  
   def index
     startdate = Date.today
     enddate = Date.today + 7
@@ -12,7 +13,7 @@ class BookingsController < ApplicationController
   end
   
   def list
-    @bookings = Booking.find(:all)
+    @bookings = Booking.find(:all, Booking.filter_conditions(params))
   end
   
   def create
@@ -46,4 +47,5 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to :action => :index
   end
+  
 end

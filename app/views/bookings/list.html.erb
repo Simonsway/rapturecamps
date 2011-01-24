@@ -7,4 +7,6 @@
   <%= link_to 'Index', bookings_path %>
 </div>
 
+<%= render :partial => "filter_form" %>
+
 <%= render :partial => "bookings", :locals => {:items => @bookings} %>

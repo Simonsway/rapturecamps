@@ -39,4 +39,8 @@ class CustomersController < ApplicationController
     @object = Customer.find(params[:id])
     @bookings = @object.bookings
   end
+  
+  def search
+    
+  end
 end
