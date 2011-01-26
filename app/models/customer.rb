@@ -15,4 +15,17 @@ class Customer < ActiveRecord::Base
   def self.for_select
     find(:all).collect{|u| [u.name, u.id]}
   end
+  
+  def self.filter_conditions(params)
+    cond = []
+    
+    [:name, :address, :city, :country, :tel, :email].each do |key|
+      unless params[key].blank?
+        cond << "#{key.to_s} like '%%#{connection.quote_string(params[key])}%%'"
+      end
+    end
+    
+    {:conditions => cond.join(" and ")}
+  end
+
 end

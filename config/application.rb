@@ -6,6 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+
 module Rapturecamps
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -14,6 +15,7 @@ module Rapturecamps
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths << "#{Rails.root}/lib"
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -38,5 +40,6 @@ module Rapturecamps
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
   end
 end

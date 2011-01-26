@@ -1,0 +1,47 @@
+<div class="filter_form">
+  <%= form_tag "", :method => :get do %>
+    <div class="field">
+      <%= label_tag :name %>
+      <%= text_field_tag :name, params[:name] %>
+    </div>
+    <div class="field">
+      <%= label_tag :room %>
+      <%= text_field_tag :room, params[:room] %>
+    </div>
+    <div class="field">
+      <%= label_tag :text %>
+      <%= text_field_tag :text, params[:text], :size => "30x5" %>
+    </div>
+    <div class="field">
+      <%= label_tag :ref %>
+      <%= text_field_tag :ref, params[:ref] %>
+    </div>
+    <!--
+    <div class="field">
+      <%= label_tag :arrival %>
+      <%= date_select :arrival, "", :default => date_from_options(params[:arrival]) %>
+    </div>
+    <div class="field">
+      <%= label_tag :departure %>
+      <%= date_select :departure, "", :default => date_from_options(params[:arrival]) %>
+    </div>
+    <div class="field">
+      <%= label_tag :pickup %>
+      <%= date_select :pickup, "", :default => date_from_options(params[:arrival]) %>
+    </div>
+    -->
+    <div class="field">
+      <%= label_tag :flight %>
+      <%= text_field_tag :flight, params[:flight] %>
+    </div>
+    <div class="field">
+      <%= label_tag :camp %>
+      <% Camp.find(:all).each do |c| %>
+        <%= check_box_tag("camp[#{c.id}]", c.id, params["camp"] && params["camp"]["#{c.id}"] == c.id.to_s) %> <%= c.name %>
+      <% end %>
+    </div>
+
+    <br >
+    <%= submit_tag "Filter" %>
+  <% end %>
+</div>

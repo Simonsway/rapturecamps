@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   def index
-    @objects = Customer.find(:all)
+    @objects = Customer.find(:all, Customer.filter_conditions(params))
   end
   
   def new

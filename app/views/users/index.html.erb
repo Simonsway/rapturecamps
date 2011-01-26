@@ -1,0 +1,29 @@
+<h1>Admins</h1>
+
+<div class="admin_links">
+  <%= link_to 'Add admin', new_user_path %>
+  <%= link_to 'Back to main', bookings_path %>
+</div>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Login</th>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <% @users.each do |obj| %>
+    <tr>
+      <td><%= obj.id %></td>
+      <td><%= obj.login %></td>
+      <td><%= obj.name %></td>
+      <td><%= obj.email %></td>
+      <td class="admin_links">
+        <%= link_to 'Edit', edit_user_path(obj) %>
+        <%= link_to 'Delete', obj, :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br />
+<hr />

@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
+  include AuthenticatedSystem
+  
   protect_from_forgery
   
   helper_method :date_from_options
+  
+  before_filter :login_required
   
   def date_from_options(which)
     return Time.new if which.nil?
@@ -11,6 +15,13 @@ class ApplicationController < ActionController::Base
     else
       Time.new
     end
+  end
+  
+protected
+  
+  def authorized?
+    return true if params[:controller] == "sessions"
+    logged_in?
   end
   
 end

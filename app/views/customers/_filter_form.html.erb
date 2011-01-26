@@ -1,0 +1,31 @@
+<div class="filter_form">
+  <%= form_tag "", :method => :get do %>
+    <div class="field">
+      <%= label_tag :name %>
+      <%= text_field_tag :name, params[:name] %>
+    </div>
+    <div class="field">
+      <%= label_tag :address %>
+      <%= text_field_tag :address, params[:address] %>
+    </div>
+    <div class="field">
+      <%= label_tag :city %>
+      <%= text_field_tag :city, params[:city] %>
+    </div>
+    <div class="field">
+      <%= label_tag :country %>
+      <%= text_field_tag :country, params[:country] %>
+    </div>
+    <div class="field">
+      <%= label_tag :tel %>
+      <%= text_field_tag :tel, params[:tel] %>
+    </div>
+    <div class="field">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, params[:email] %>
+    </div>
+
+    <br >
+    <%= submit_tag "Filter" %>
+  <% end %>
+</div>
