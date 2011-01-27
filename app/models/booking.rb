@@ -44,6 +44,12 @@ class Booking < ActiveRecord::Base
       cond << "(" + camp_c.join(" or ") + ")"
     end
     
+    if params[:arrival] && params[:departure]
+      a = date_from_options(params[:arrival])
+      d = date_from_options(params[:departure])
+      cond << " DATE(arrival) >= DATE('#{a.to_s(:db)}') and DATE(departure) <= DATE('#{d.to_s(:db)}')"
+    end
+    
     {:conditions => cond.join(" and "), :include => include}
   end
   

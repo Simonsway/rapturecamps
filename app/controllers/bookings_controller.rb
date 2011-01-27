@@ -48,4 +48,9 @@ class BookingsController < ApplicationController
     redirect_to :action => :index
   end
   
+  def auto_complete_belongs_to_for_booking_customer_name
+    @customers = Customer.find(:all, Customer.filter_conditions(:name => params[:customer][:name]))
+    render :inline => '<%= model_auto_completer_result(@customers, :name) %>'
+  end
+  
 end

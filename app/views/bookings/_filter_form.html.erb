@@ -16,20 +16,14 @@
       <%= label_tag :ref %>
       <%= text_field_tag :ref, params[:ref] %>
     </div>
-    <!--
     <div class="field">
       <%= label_tag :arrival %>
       <%= date_select :arrival, "", :default => date_from_options(params[:arrival]) %>
     </div>
     <div class="field">
       <%= label_tag :departure %>
-      <%= date_select :departure, "", :default => date_from_options(params[:arrival]) %>
+      <%= date_select :departure, "", :default => date_from_options(params[:departure]) %>
     </div>
-    <div class="field">
-      <%= label_tag :pickup %>
-      <%= date_select :pickup, "", :default => date_from_options(params[:arrival]) %>
-    </div>
-    -->
     <div class="field">
       <%= label_tag :flight %>
       <%= text_field_tag :flight, params[:flight] %>

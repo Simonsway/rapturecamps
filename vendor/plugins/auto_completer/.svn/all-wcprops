@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/53/trunk/vendor/plugins/model_auto_completer
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2/trunk/vendor/plugins/model_auto_completer/Rakefile
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2/trunk/vendor/plugins/model_auto_completer/init.rb
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/52/trunk/vendor/plugins/model_auto_completer/ChangeLog
+END
+THANKS
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/42/trunk/vendor/plugins/model_auto_completer/THANKS
+END
+install.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/19/trunk/vendor/plugins/model_auto_completer/install.rb
+END
+MIT-LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/10/trunk/vendor/plugins/model_auto_completer/MIT-LICENSE
+END
+about.yml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/8/trunk/vendor/plugins/model_auto_completer/about.yml
+END
+uninstall.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/2/trunk/vendor/plugins/model_auto_completer/uninstall.rb
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/53/trunk/vendor/plugins/model_auto_completer/README
+END

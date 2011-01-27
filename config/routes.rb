@@ -11,7 +11,7 @@ Rapturecamps::Application.routes.draw do
   #match '/activate/:activation_code' => 'users#activate', :as => :activate, :activation_code => nil
 
   resources :customers do
-    member do 
+    member do
       get 'bookings'
     end
   end
@@ -19,6 +19,7 @@ Rapturecamps::Application.routes.draw do
   resources :bookings do
     collection do
       get 'list'
+      post 'auto_complete_belongs_to_for_booking_customer_name'
     end
   end
   

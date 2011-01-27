@@ -3,9 +3,7 @@
 <%= form_for(@booking) do |f| %>
   <div class="field">
     <%= f.label :customer_id %><br />
-    <%= f.select :customer_id, Customer.for_select %>
-    <%#= text_field_with_auto_complete :booking, :customer_name %>
-    <%#= text_field_with_auto_complete :booking, :customer_name, {  }, { :url => formatted_search_customers_path(:js), :param_name => 'search' } %>
+    <%= belongs_to_auto_completer :booking, :customer, :name, {}, {}, { :skip_style => false } %>
   </div>
   <div class="field">
     <%= f.label :room %><br />
