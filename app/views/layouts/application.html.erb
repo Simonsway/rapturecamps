@@ -1,14 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Rapturecamps</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults, "scriptaculous" %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Rapturecamps</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults, "scriptaculous" %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <div id="body_wrap">
+      <div id="logo"></div>
+      
+      <div class="admin_links">
+        Hi <%= current_user.name %>, <%= link_to 'Logout', logout_path, :class => "logout" %>
+        <br />
+        <br />
+        <%= link_to 'Add booking', new_booking_path %>
+        <%= link_to 'Add customer', new_customer_path %>
+        <%= link_to 'Bookings list', list_bookings_path %>
+        <%= link_to 'Customers list', customers_path %>
+        <%#= link_to 'Admins', users_path %>
+      </div>
+      
+      <div id="content_wrap">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,31 +1,35 @@
-div.field, div.actions {
-	margin-bottom: 10px;
-}
+html, body {background-color: #d5e9ed; font-family: Arial;}
+p {margin: 0px; padding: 0px;}
 
-#buttons {
-	margin-bottom: 10px;
-}
+table {width:100%; border: 0px; border-collapse: collapse; border-spacing: 0px;}
+td, th {border: 0px solid black; vertical-align: top; text-align: left;}
+th {color: #565353;}
+td {color: #b9b9b9;}
 
+tr.top_info {border-top: 1px solid #2c2828;}
+tr.bottom_info {border-bottom: 1px solid #3a3c37;}
+td.customer {color: white;}
+td.arrival {color: white;}
+td.pickup {color: #3ebeea;}
+td.flight {color: #3ebeea;}
+td.actions {vertical-align: bottom; text-align: right;}
 
-table {
-width:90%;
-border:1px solid #e5eff8;
-margin:1em auto;
-border-collapse:collapse;
-font: 14px "Helvetica", Arial;
-}
+#body_wrap {width: 850px; margin: 0px auto; position: relative;}
 
-td {
-color:#678197;
-border:1px solid #e5eff8;
-padding:.3em 1em;
-text-align:center;
-}
+#logo {background-image: url('/images/logo.png'); width: 245px; height: 77px; position: absolute; top: 10px; left: 30px;}
 
-.admin_links a {margin-right: 10px;}
+.admin_links {height: 100px; float: right; color: #676969; text-align: right;}
+.admin_links a {color: white; line-height: 36px; text-align: center; text-decoration: none; margin-left: 10px; display: block; float: left; background-image: url('/images/menu_button.png'); width: 120px; height: 36px;}
+.admin_links a.logout {color: #676969; line-height: 12px; text-decoration: none; display: inline; float: none; background-image: none;}
+
+#content_wrap {background-image: url('/images/content_back.png'); clear: both; padding: 20px;}
 
 .error_messages {color: red; font-weight: bold; margin-bottom: 5px;}
 
 .field_with_errors {display: inline; color: #f00; font-weight: bold;}
 
 .filter_form .field {float: left;}
+
+div.field, div.actions {margin-bottom: 10px;}
+
+#buttons {margin-bottom: 10px;}

@@ -1,37 +1,7 @@
-<h1>Rapturecamps Arrivals and Departures</h1>
-
-<div class="admin_links">
-  Hi <%= current_user.name %>, <%= link_to 'Logout', logout_path %>
-  <br />
-  <br />
-  <%= link_to 'Add booking', new_booking_path %>
-  <%= link_to 'Add customer', new_customer_path %>
-  <%= link_to 'Bookings list', list_bookings_path %>
-  <%= link_to 'Customers list', customers_path %>
-  <%= link_to 'Admins', users_path %>
-</div>
-
 <h2>Arrivals</h2>
 <%= render :partial => "bookings", :locals => {:items => @bookings_arrival} %>
 
-<br /><hr />
+<br />
 
 <h2>Departures</h2>
 <%= render :partial => "bookings", :locals => {:items => @bookings_departure} %>
-
-<!--
-  <%= form_for Booking.new do |f| %>
-
-    <div class = "field">
-      <%= f.label :arrival %><br />
-      <%= f.range_field :arrival %>
-    </div>
-    <div class = "field">
-      <%= f.label :departure %><br />
-      <%= f.range_field :departure %>
-    </div>
-
-  <%= f.submit %>
-
-  <% end %>
--->
