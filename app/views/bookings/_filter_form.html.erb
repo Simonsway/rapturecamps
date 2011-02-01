@@ -1,41 +1,44 @@
 <div class="filter_form">
   <%= form_tag "", :method => :get do %>
-    <div class="field">
-      <%= label_tag :name %>
-      <%= text_field_tag :name, params[:name] %>
+    <div class="window">
+      <div class="window_left"></div>
+      <%= text_field_tag :ref, params[:ref].blank? ? "Ref" : params[:ref], :onblur => "if(this.value=='') this.value='Ref';", :onfocus => "if(this.value=='Ref') this.value='';" %>
+      <div class="window_right"></div>
     </div>
-    <div class="field">
-      <%= label_tag :room %>
-      <%= text_field_tag :room, params[:room] %>
+    <div class="window room">
+      <div class="window_left"></div>
+      <%= text_field_tag :room, params[:room].blank? ? "Room" : params[:room], :onblur => "if(this.value=='') this.value='Room';", :onfocus => "if(this.value=='Room') this.value='';" %>
+      <div class="window_right"></div>
     </div>
-    <div class="field">
-      <%= label_tag :text %>
-      <%= text_field_tag :text, params[:text], :size => "30x5" %>
+    <div class="window name">
+      <div class="window_left"></div>
+      <%= text_field_tag :name, params[:name].blank? ? "Name" : params[:name], :onblur => "if(this.value=='') this.value='Name';", :onfocus => "if(this.value=='Name') this.value='';" %>
+      <div class="window_right"></div>
     </div>
-    <div class="field">
-      <%= label_tag :ref %>
-      <%= text_field_tag :ref, params[:ref] %>
-    </div>
-    <div class="field">
-      <%= label_tag :arrival %>
-      <%= date_select :arrival, "", :default => date_from_options(params[:arrival]) %>
-    </div>
-    <div class="field">
-      <%= label_tag :departure %>
+    
+    <br class="clear" />
+    
+    <div class="window">
+      <div class="window_left"></div>
       <%= date_select :departure, "", :default => date_from_options(params[:departure]) %>
+      <div class="window_right"></div>
     </div>
-    <div class="field">
-      <%= label_tag :flight %>
-      <%= text_field_tag :flight, params[:flight] %>
+    <div class="window">
+      <div class="window_left"></div>
+      <%= date_select :arrival, "", :default => date_from_options(params[:arrival]) %>
+      <div class="window_right"></div>
     </div>
-    <div class="field">
-      <%= label_tag :camp %>
+    
+    <br class="clear" />
+    
+    <%= submit_tag "Search", :class => "submit fright" %>
+
+    <div class="fright" style="margin-right: 20px; padding-top: 5px;">
       <% Camp.find(:all).each do |c| %>
         <%= check_box_tag("camp[#{c.id}]", c.id, params["camp"] && params["camp"]["#{c.id}"] == c.id.to_s) %> <%= c.name %>
       <% end %>
     </div>
-
-    <br >
-    <%= submit_tag "Filter" %>
+    <br class="clear" />
   <% end %>
 </div>
+<br class="clear" />

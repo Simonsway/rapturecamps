@@ -1,34 +1,48 @@
 <%= error_messages_for @object %>
 
-<%= form_for(@object) do |f| %>
-  <div class = "field">
-    <%= f.label :name %><br />
+<%= form_for(@object, {}, :html => {:class => "no_window_float"}) do |f| %>
+  <%= f.label :name %>
+  <div class="window">
+    <div class="window_left"></div>
     <%= f.text_field :name %>
+    <div class="window_right"></div>
   </div>
-  <div class = "field">
-    <%= f.label :address %><br />
+  <%= f.label :address %>
+  <div class="window">
+    <div class="window_left"></div>
     <%= f.text_field :address %>
+    <div class="window_right"></div>
   </div>
-  <div class = "field">
-    <%= f.label :city %><br />
+  <%= f.label :city %>
+  <div class="window">
+    <div class="window_left"></div>
     <%= f.text_field :city %>
+    <div class="window_right"></div>
   </div>
-  <div class = "field">
-    <%= f.label :country %><br />
+  <%= f.label :country %>
+  <div class="window">
+    <div class="window_left"></div>
     <%= f.text_field :country %>
+    <div class="window_right"></div>
   </div>
-  <div class = "field">
-    <%= f.label :postcode %><br />
+  <%= f.label :postcode %>
+  <div class="window">
+    <div class="window_left"></div>
     <%= f.text_field :postcode %>
+    <div class="window_right"></div>
   </div>
-  <div class = "field">
-    <%= f.label :tel %><br />
+  <%= f.label :tel %>
+  <div class="window">
+    <div class="window_left"></div>
     <%= f.text_field :tel %>
+    <div class="window_right"></div>
   </div>
-  <div class = "field">
-    <%= f.label :email %><br />
+  <%= f.label :email %>
+  <div class="window">
+    <div class="window_left"></div>
     <%= f.text_field :email %>
+    <div class="window_right"></div>
   </div>
   <br />
-  <%= f.submit %>
+  <%= f.submit "Submit", :class => "submit" %>
 <% end %>

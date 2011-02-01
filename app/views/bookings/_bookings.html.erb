@@ -1,30 +1,55 @@
-<table>
+<table class="bookings">
   <tr>
-    <th>Customer</th>
-    <th>Arrival</th>
-    <th>Pickup</td>
-    <th>Flight</td>
+    <th class="customer padding_left">Customer</th>
+    <th class="arrival">Arrival</th>
+    <th class="pickup">Pickup</td>
+    <th class="flight padding_right">Flight</td>
   </tr>
   
   <% items.each do |booking| %>
     <tr class="top_info">
-      <td class="customer"><%= booking.customer.name if booking.customer %><%#= link_to(booking.customer.name, edit_customer_path(booking.customer)) if booking.customer %></td>
-      <td class="arrival"><%= booking.arrival %></td>
-      <td class="pickup"><%= booking.pickup %></td>
-      <td class="flight"><%= booking.flight %></td>
+      <td class="customer padding_left">
+        <div class="window">
+          <div class="window_left"></div>
+          <%= booking.customer.name if booking.customer %><%#= link_to(booking.customer.name, edit_customer_path(booking.customer)) if booking.customer %>
+          <div class="window_right"></div>
+        </div>
+      </td>
+      <td class="arrival">
+        <div class="window">
+          <div class="window_left"></div>
+          <%= booking.arrival.strftime("%d-%m-%y") %>
+          <div class="window_right"></div>
+        </div>
+      </td>
+      <td class="pickup">
+        <div class="window">
+          <div class="window_left"></div>
+          <%= booking.pickup.strftime("%d-%m-%y / %H:%M") %>
+          <div class="window_right"></div>
+        </div>
+      </td>
+      <td class="flight padding_right">
+        <div class="window">
+          <div class="window_left"></div>
+          <%= booking.flight %>
+          <div class="window_right"></div>
+        </div>
+      </td>
     </tr>
     <tr class="bottom_info">
-      <td>
-        <p>Room: <%= booking.room %></p>
-        <p>Ref: <%= booking.ref %></p>
-        <p>Departure: <%= booking.departure %></p>
+      <td class="padding_left">
+        <p>ROOM: <%= booking.room %></p>
+        <p>REF: <%= booking.ref %></p>
+        <p>DEPARTURE: <%= booking.departure.strftime("%d-%m-%y / %H:%M") %></p>
       </td>
       <td colspan="2">
-        <%= booking.camp.name if booking.camp %>
-        <br />
-        Info: <%= booking.text %>
+        <p><%= booking.camp.name if booking.camp %></p>
+        <div style="float: left;">INFO: </div><div style="float: left; margin-left: 5px; width: 350px;"><%= booking.text.to_s.gsub("\n", "<br />") %></div>
       </td>
-      <td class="actions"><%= link_to 'Edit', edit_booking_path(booking) %><%= link_to 'Delete', booking, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td class="actions padding_right">
+        <%= link_to '', edit_booking_path(booking), :class => "edit" %><%= link_to '', booking, :confirm => 'Are you sure?', :method => :delete, :class => "delete" %>
+      </td>
     </tr>
   <% end %>
 </table>

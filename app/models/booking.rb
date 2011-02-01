@@ -25,13 +25,13 @@ class Booking < ActiveRecord::Base
     cond = []
     include = []
     
-    unless params[:name].blank?
+    if !params[:name].blank? && params[:name] != "Name"
       cond << "customers.name like '%%#{connection.quote_string(params[:name])}%%'"
       include << :customer
     end
     
     [:room, :text, :ref, :flight].each do |key|
-      unless params[key].blank?
+      if !params[key].blank? && params[key] != key.to_s.humanize
         cond << "#{key.to_s} like '%%#{connection.quote_string(params[key])}%%'"
       end
     end

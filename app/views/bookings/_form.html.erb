@@ -1,42 +1,41 @@
 <%= error_messages_for @booking %>
 
-<%= form_for(@booking) do |f| %>
-  <div class="field">
-    <%= f.label :customer_id %><br />
+<%= form_for(@booking, {}, :html => {:class => "no_window_float"}) do |f| %>
+  <%= f.label :customer %>
+  <div class="window">
+    <div class="window_left"></div>
     <%= belongs_to_auto_completer :booking, :customer, :name, {}, {}, { :skip_style => false } %>
+    <div class="window_right"></div>
   </div>
-  <div class="field">
-    <%= f.label :room %><br />
+  <%= f.label :room %>
+  <div class="window">
+    <div class="window_left"></div>
     <%= f.text_field :room %>
+    <div class="window_right"></div>
   </div>
-  <div class="field">
-    <%= f.label :text %><br />
-    <%= f.text_area :text, :size => "30x5" %>
-  </div>
-  <div class="field">
-    <%= f.label :ref %><br />
+  <%= f.label :info, :class=>"clear" %>
+  <%= f.text_area :text, :size => "30x5" %>
+  <%= f.label :ref, :class=>"clear" %>
+  <div class="window">
+    <div class="window_left"></div>
     <%= f.text_field :ref %>
+    <div class="window_right"></div>
   </div>
-  <div class="field">
-    <%= f.label :arrival %><br />
-    <%= f.date_select :arrival %>
-  </div>
-  <div class="field">
-    <%= f.label :departure %><br />
-    <%= f.date_select :departure %>
-  </div>
-  <div class="field">
-    <%= f.label :pickup %><br />
-    <%= f.datetime_select :pickup %>
-  </div>
-  <div class="field">
-    <%= f.label :flight %><br />
+  <%= f.label :arrival, :class=>"clear" %>
+  <%= f.date_select :arrival %>
+  <%= f.label :departure, :class=>"clear" %>
+  <%= f.date_select :departure %>
+  <%= f.label :pickup, :class=>"clear" %>
+  <%= f.datetime_select :pickup %>
+  <%= f.label :flight, :class=>"clear" %>
+  <div class="window">
+    <div class="window_left"></div>
     <%= f.text_field :flight %>
+    <div class="window_right"></div>
   </div>
-  <div class="field">
-    <%= f.label :camp_id %><br />
-    <%= f.select :camp_id, Camp.for_select, {}, :size => 2 %>
-  </div>
-  <br >
-  <%= f.submit %>
+  <%= f.label :camp, :class=>"clear" %>
+  <%= f.select :camp_id, Camp.for_select, {}, :size => 2 %>
+  <br class="clear" />
+  <%= f.submit "Submit", :class => "submit", :style => "margin-top: 10px;" %>
+  <br class="clear" />
 <% end %>

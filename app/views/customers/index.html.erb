@@ -1,10 +1,4 @@
 <h1>Customers</h1>
-<div class="admin_links">
-  <%= link_to 'Add customer', new_customer_path %>
-  <%= link_to 'Add booking', new_booking_path %>
-  <%= link_to 'Bookings list', list_bookings_path %>
-  <%= link_to 'Index', bookings_path %>
-</div>
 
 <%= render :partial => "filter_form" %>
 
@@ -29,10 +23,10 @@
       <td><%= obj.postcode %></td>
       <td><%= obj.tel %></td>
       <td><%= obj.email %></td>
-      <td class="admin_links">
-        <%= link_to 'All bookings', bookings_customer_url(obj) %>
-        <%= link_to 'Edit', edit_customer_path(obj) %>
-        <%= link_to 'Delete', obj, :confirm => 'Are you sure?', :method => :delete %>
+      <td>
+        <%= link_to '', bookings_customer_url(obj), :class => "show" %>
+        <%= link_to '', edit_customer_path(obj), :class => "edit" %>
+        <%= link_to '', obj, :confirm => 'Are you sure?', :method => :delete, :class => "delete" %>
       </td>
     </tr>
   <% end %>

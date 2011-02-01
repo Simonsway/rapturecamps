@@ -20,7 +20,7 @@ class Customer < ActiveRecord::Base
     cond = []
     
     [:name, :address, :city, :country, :tel, :email].each do |key|
-      unless params[key].blank?
+      if !params[key].blank? && params[key] != key.to_s.humanize
         cond << "#{key.to_s} like '%%#{connection.quote_string(params[key])}%%'"
       end
     end

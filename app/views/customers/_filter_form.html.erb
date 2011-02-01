@@ -1,31 +1,40 @@
 <div class="filter_form">
   <%= form_tag "", :method => :get do %>
-    <div class="field">
-      <%= label_tag :name %>
-      <%= text_field_tag :name, params[:name] %>
+    <div class="window">
+      <div class="window_left"></div>
+      <%= text_field_tag :city, params[:city].blank? ? "City" : params[:city], :onblur => "if(this.value=='') this.value='City';", :onfocus => "if(this.value=='City') this.value='';" %>
+      <div class="window_right"></div>
     </div>
-    <div class="field">
-      <%= label_tag :address %>
-      <%= text_field_tag :address, params[:address] %>
+    <div class="window">
+      <div class="window_left"></div>
+      <%= text_field_tag :address, params[:address].blank? ? "Address" : params[:address], :onblur => "if(this.value=='') this.value='Address';", :onfocus => "if(this.value=='Address') this.value='';" %>
+      <div class="window_right"></div>
     </div>
-    <div class="field">
-      <%= label_tag :city %>
-      <%= text_field_tag :city, params[:city] %>
+    <div class="window">
+      <div class="window_left"></div>
+      <%= text_field_tag :name, params[:name].blank? ? "Name" : params[:name], :onblur => "if(this.value=='') this.value='Name';", :onfocus => "if(this.value=='Name') this.value='';" %>
+      <div class="window_right"></div>
     </div>
-    <div class="field">
-      <%= label_tag :country %>
-      <%= text_field_tag :country, params[:country] %>
+    <br class="clear" />
+    <div class="window">
+      <div class="window_left"></div>
+      <%= text_field_tag :country, params[:country].blank? ? "Country" : params[:country], :onblur => "if(this.value=='') this.value='Country';", :onfocus => "if(this.value=='Country') this.value='';" %>
+      <div class="window_right"></div>
     </div>
-    <div class="field">
-      <%= label_tag :tel %>
-      <%= text_field_tag :tel, params[:tel] %>
+    <div class="window">
+      <div class="window_left"></div>
+      <%= text_field_tag :tel, params[:tel].blank? ? "Tel" : params[:tel], :onblur => "if(this.value=='') this.value='Tel';", :onfocus => "if(this.value=='Tel') this.value='';" %>
+      <div class="window_right"></div>
     </div>
-    <div class="field">
-      <%= label_tag :email %>
-      <%= text_field_tag :email, params[:email] %>
+    <div class="window">
+      <div class="window_left"></div>
+      <%= text_field_tag :email, params[:email].blank? ? "Email" : params[:email], :onblur => "if(this.value=='') this.value='Email';", :onfocus => "if(this.value=='Email') this.value='';" %>
+      <div class="window_right"></div>
     </div>
 
-    <br >
-    <%= submit_tag "Filter" %>
+    <br class="clear" />
+    <%= submit_tag "Filter", :class => "submit fright" %>
+    <br class="clear" />
   <% end %>
 </div>
+<br class="clear" />

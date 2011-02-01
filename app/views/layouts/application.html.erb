@@ -9,10 +9,12 @@
   </head>
   <body>
     <div id="body_wrap">
-      <div id="logo"></div>
+      <%= link_to '', bookings_path, :id => "logo" %>
       
       <div class="admin_links">
-        Hi <%= current_user.name %>, <%= link_to 'Logout', logout_path, :class => "logout" %>
+        <% if current_user %>
+          Hi <%= current_user.name %>, <%= link_to 'Logout', logout_path, :class => "logout" %>
+        <% end %>
         <br />
         <br />
         <%= link_to 'Add booking', new_booking_path %>
