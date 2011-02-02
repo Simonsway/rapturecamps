@@ -4,7 +4,7 @@ class Booking < ActiveRecord::Base
   
   validates :room, :presence => true
   validates :text, :presence => true
-  validates :flight, :presence => true
+  #validates :flight, :presence => true
   validates :customer_id, :presence => true
   validates :camp_id, :presence => true
   
