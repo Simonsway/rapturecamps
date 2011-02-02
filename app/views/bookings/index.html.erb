@@ -1,7 +1,7 @@
-<h2>Arrivals</h2>
-<%= render :partial => "bookings", :locals => {:items => @bookings_arrival} %>
+<h2><%= image_tag "/images/arrival.png", :alt => "arrival" %></h2>
+<%= render :partial => "bookings", :locals => {:items => @bookings_arrival, :delete_link => false} %>
 
-<br />
+<hr class="shadow" />
 
-<h2>Departures</h2>
-<%= render :partial => "bookings", :locals => {:items => @bookings_departure} %>
+<h2><%= image_tag "/images/departure.png", :alt => "departure" %></h2>
+<%= render :partial => "bookings", :locals => {:items => @bookings_departure, :delete_link => false, :departure => true} %>

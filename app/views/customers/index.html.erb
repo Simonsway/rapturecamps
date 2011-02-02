@@ -4,7 +4,6 @@
 
 <table>
   <tr>
-    <th>Id</th>
     <th>Name</th>
     <th>Address</th>
     <th>City</th>
@@ -15,7 +14,6 @@
   </tr>
   <% @objects.each do |obj| %>
     <tr>
-      <td><%= obj.id %></td>
       <td><%= obj.name %></td>
       <td><%= obj.address %></td>
       <td><%= obj.city %></td>
@@ -31,5 +29,3 @@
     </tr>
   <% end %>
 </table>
-<br />
-<hr />

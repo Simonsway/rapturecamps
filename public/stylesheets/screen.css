@@ -1,11 +1,11 @@
-html, body {background-color: #d5e9ed; color: #b9b9b9; font-family: Arial, Helvetica, sans-serif; font-size: 12px;}
+html, body {background-color: #d5e9ed; color: #b9b9b9; font-family: Arial, Helvetica, sans-serif; font-size: 11px;}
 p {margin: 0px; padding: 0px;}
 .clear {clear: both; display: block;}
 .fright {float: right;}
 
 table {width:100%; border: 0px; border-collapse: collapse; border-spacing: 0px;}
 td, th {border: 0px solid black; vertical-align: top; text-align: left;}
-th {color: #565353; padding-left: 10px; text-transform: uppercase; font-size: 0.9em; padding-bottom: 5px;}
+th {color: #565353; text-transform: uppercase; font-size: 0.9em; padding-bottom: 5px;}
 td {color: #b9b9b9;}
 
 table.bookings {margin: 0px 0px 0px -20px; width: 850px;}
@@ -19,10 +19,12 @@ th.customer {width: 280px;}
 th.arrival {width: 145px;}
 th.pickup {}
 th.flight {width: 100px;}
-td.customer {color: white; font-weight: bold;}
-td.arrival {color: white; font-weight: bold;}
-td.pickup {color: #3ebeea; font-weight: bold;}
-td.flight {color: #3ebeea; text-transform: uppercase; font-weight: bold;}
+td.customer {color: white; font-weight: bold; font-size: 1.2em;}
+td.arrival {color: white; font-weight: bold; font-size: 1.2em;}
+td.pickup {color: #3ebeea; font-weight: bold; font-size: 1.2em;}
+td.flight {color: #3ebeea; text-transform: uppercase; font-weight: bold; font-size: 1.2em;}
+td.pickup.departure {color: #ae3636;}
+td.flight.departure {color: #ae3636;}
 td.flight div.window {text-align: center;}
 td.actions {vertical-align: bottom; text-align: right; padding-bottom: 10px;}
 
@@ -32,11 +34,11 @@ td.actions {vertical-align: bottom; text-align: right; padding-bottom: 10px;}
 
 #body_wrap {width: 850px; margin: 0px auto; position: relative;}
 
-#logo {display: block; background-image: url('/images/logo.png'); width: 245px; height: 77px; position: absolute; top: 10px; left: 30px;}
+#logo {display: block; background-image: url('/images/logo.png'); width: 245px; height: 77px; position: absolute; top: 30px; left: 30px;}
 
-.admin_links {height: 140px; float: right; color: #676969; text-align: right;}
-.admin_links a {color: white; font-size: 11px; line-height: 36px; text-align: center; text-decoration: none; text-transform: uppercase; margin-left: 10px; margin-top: 60px; display: block; float: left; background-image: url('/images/menu_button.png'); width: 120px; height: 36px;}
-.admin_links a.logout {color: #676969; font-size: 12px; line-height: 12px; text-decoration: none; text-transform: none; margin: 0px; display: inline; float: none; background-image: none;}
+.admin_links {height: 140px; float: right; color: #676969; text-align: right; margin-top: 30px;}
+.admin_links a {color: white; font-size: 11px; line-height: 36px; text-align: center; text-decoration: none; text-transform: uppercase; margin-left: 10px; margin-top: 50px; display: block; float: left; background-image: url('/images/menu_button.png'); width: 120px; height: 36px;}
+.admin_links a.logout {color: #676969; font-size: 1em; line-height: 12px; text-decoration: none; text-transform: none; margin: 0px; display: inline; float: none; background-image: none;}
 
 #content_wrap {background-image: url('/images/content_back.png'); clear: both; padding: 20px; box-shadow: 0 0 10px 0 #555555; border-radius: 3px;}
 
@@ -45,13 +47,15 @@ td.actions {vertical-align: bottom; text-align: right; padding-bottom: 10px;}
 .field_with_errors {display: inline; color: #f00; font-weight: bold;}
 
 form {margin-bottom: 10px;}
+form .window_clear {float: right; margin-right: 15px; height: 25px; padding-top: 15px;}
 form .window {width: 170px; float: right; padding-right: 5px; margin-top: 0px; margin-bottom: 0px; overflow: visible; text-overflow: visible;}
-form .window input, form .window select, form select {border: 0px; background-color: transparent; color: #737373;}
-form .window text {border: 0px; background-color: transparent; color: #737373;}
-form .submit {background-color: #343235; border: 1px solid #bbbaba; border-radius: 3px; color: white; width: 80px; height: 25px; margin-right: 15px;}
+form .window input, form .window select, form select {border: 0px; background-color: transparent; color: #ccc;}
+form .window text {border: 0px; background-color: transparent; color: #ccc;}
+form .submit {background-color: #343235; border: 1px solid #bbbaba; border-radius: 3px; color: white; width: 80px; height: 25px; margin-right: 15px; margin-top: 10px;}
 form.no_window_float .window {float: none;}
 form label {margin: 5px 0px;}
-form textarea {border-radius: 3px; border: 1px solid #555; background-color: #272725; box-shadow: 0 0 10px 0 #555555;}
+form textarea {color: #ccc; border-radius: 3px; border: 1px solid #555; background-color: #272725; box-shadow: 0 0 10px 0 #555555; margin-left: -5px; width: 500px; height: 200px;}
+form input {font-size: 1.4em; color: #ccc;}
 
 div.field, div.actions {margin-bottom: 10px;}
 
@@ -62,3 +66,5 @@ div.field, div.actions {margin-bottom: 10px;}
 a.delete {background-image: url('/images/icon_delete.png'); display: block; height: 15px; width: 15px; float: left;}
 a.edit {background-image: url('/images/icon_edit.png'); display: block; height: 15px; width: 15px; float: left;}
 a.show {background-image: url('/images/icon_show.png'); display: block; height: 15px; width: 15px; float: left;}
+
+hr.shadow {background-image: url('/images/shadow.png'); background-position: center center; background-repeat: no-repeat; height: 5px; border: 0px; margin: 30px 0px;}
