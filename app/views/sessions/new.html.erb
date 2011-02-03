@@ -1,16 +1,20 @@
-<h1>Log In</h1>
+<h1><%= image_tag "login.png", :alt => "login" %></h1>
 
 <%= form_tag session_path do -%>
-<p><%= label_tag 'login' %><br />
-<%= text_field_tag 'login', @login %></p>
+  <%= label_tag 'login' %>
+  <div class="window">
+    <div class="window_left"></div>
+    <%= text_field_tag 'login', @login %>
+    <div class="window_right"></div>
+  </div>
 
-<p><%= label_tag 'password' %><br/>
-<%= password_field_tag 'password', nil %></p>
 
-<!-- Uncomment this if you want this functionality
-<p><%= label_tag 'remember_me', 'Remember me' %>
-<%= check_box_tag 'remember_me', '1', @remember_me %></p>
--->
-
-<p><%= submit_tag 'Log in' %></p>
+  <%= label_tag 'password' %>
+  <div class="window">
+    <div class="window_left"></div>
+    <%= password_field_tag 'password', nil %>
+    <div class="window_right"></div>
+  </div>
+  
+  <%= submit_tag 'Log in', :class => "submit" %>
 <% end -%>

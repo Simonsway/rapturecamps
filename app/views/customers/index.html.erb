@@ -1,4 +1,4 @@
-<h1>Customers</h1>
+<h1><%= image_tag "customers.png", :alt => "customers" %></h1>
 
 <%= render :partial => "filter_form" %>
 
@@ -20,7 +20,7 @@
       <td><%= obj.country %></td>
       <td><%= obj.postcode %></td>
       <td><%= obj.tel %></td>
-      <td><%= obj.email %></td>
+      <td><%= mail_to obj.email %></td>
       <td>
         <%= link_to '', bookings_customer_url(obj), :class => "show" %>
         <%= link_to '', edit_customer_path(obj), :class => "edit" %>

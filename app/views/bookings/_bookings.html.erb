@@ -1,64 +1,78 @@
-<% delete_link ||= nil %>
-<% departure ||= false %>
+<% delete_link = true if delete_link.nil? %>
+<% departure = false if departure.nil? %>
 
-<table class="bookings">
-  <tr>
-    <th class="customer padding_left">Customer</th>
-    <th class="arrival">Arrival</th>
-    <th class="pickup"><%= departure ? "Dropoff" : "Pickup" %></td>
-    <th class="flight padding_right">Flight</td>
-  </tr>
-  
-  <% items.each do |booking| %>
-    <tr class="top_info">
-      <td class="customer padding_left">
-        <div class="window">
-          <div class="window_left"></div>
-          <%= booking.customer.name if booking.customer %><%#= link_to(booking.customer.name, edit_customer_path(booking.customer)) if booking.customer %>
-          <div class="window_right"></div>
-        </div>
-      </td>
-      <td class="arrival">
-        <div class="window">
-          <div class="window_left"></div>
-          <%= booking.arrival.strftime("%d-%m-%y") %>
-          <div class="window_right"></div>
-        </div>
-      </td>
-      <td class="pickup <%= "departure" if departure %>">
-        <div class="window">
-          <div class="window_left"></div>
-          <%= booking.pickup.strftime("%d-%m-%y / %H:%M") %>
-          <div class="window_right"></div>
-        </div>
-      </td>
-      <td class="flight <%= "departure" if departure %> padding_right">
-        <div class="window">
-          <div class="window_left"></div>
-          <%= booking.flight %>
-          <div class="window_right"></div>
-        </div>
-      </td>
+<div class="bookings_normal_wrap">
+  <table class="bookings">
+    <tr>
+      <th class="customer padding_left">Customer</th>
+      <th class="arrival">Arrival</th>
+      <th class="pickup"><%= departure ? "Dropoff" : "Pickup" %></td>
+      <th class="camp">Camp</td>
+      <th class="flight">Flight</td>
     </tr>
-    <tr class="bottom_info">
-      <td class="padding_left">
-        <p>ROOM: <%= booking.room %></p>
-        <p>REF: <%= booking.ref %></p>
-        <p>DEPARTURE: <%= booking.departure.strftime("%d-%m-%y / %H:%M") %></p>
-      </td>
-      <td colspan="2">
-        <p>CAMP: <%= booking.camp.name if booking.camp %></p>
-        <div style="float: left;">INFO: </div>
-        <div style="float: left; margin-left: 5px; width: 350px;">
-          <% booking.text.split("\n")[0..2].each do |t| %>
-            <%= t %><br />
-          <% end %>
-        </div>
-      </td>
-      <td class="actions padding_right">
-        <%= link_to '', edit_booking_path(booking), :class => "edit" %>
-        <%= link_to('', booking, :confirm => 'Are you sure?', :method => :delete, :class => "delete") if delete_link.nil? || delete_link == true %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+  </table>
+</div>
+<% items.each do |booking| %>
+  <div class="bookings_wrap">
+    <table class="bookings">
+      <tr class="top_info">
+        <td class="customer padding_left">
+          <div class="window">
+            <div class="window_left"></div>
+            <%= booking.customer.name if booking.customer %><%#= link_to(booking.customer.name, edit_customer_path(booking.customer)) if booking.customer %>
+            <div class="window_right"></div>
+          </div>
+        </td>
+        <td class="arrival">
+          <div class="window">
+            <div class="window_left"></div>
+            <%= booking.arrival.strftime("%d-%m-%y") %>
+            <div class="window_right"></div>
+          </div>
+        </td>
+        <td class="pickup <%= "departure" if departure %>">
+          <div class="window">
+            <div class="window_left"></div>
+            <%= booking.is_pickup ? booking.pickup.strftime("%d-%m-%y / %H:%M") : "---" %>
+            <div class="window_right"></div>
+          </div>
+        </td>
+        <td class="camp <%= "departure" if departure %>">
+          <div class="window">
+            <div class="window_left"></div>
+            <%= booking.camp.name if booking.camp %>
+            <div class="window_right"></div>
+          </div>
+        </td>
+        <td class="flight <%= "departure" if departure %>">
+          <div class="window">
+            <div class="window_left"></div>
+            <%= booking.flight %>
+            <div class="window_right"></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="bottom_info">
+        <td class="padding_left">
+          <p>ROOM: <%= booking.room %></p>
+          <p>REF: <%= booking.ref %></p>
+          <p>DEPARTURE: <%= booking.departure.strftime("%d-%m-%y / %H:%M") %></p>
+        </td>
+        <td colspan="3">
+          <div style="float: left;">INFO: </div>
+          <div style="float: left; margin-left: 5px; width: 350px;">
+            <% booking.text.split("\n")[0..3].each do |t| %>
+              <%= t %><br />
+            <% end %>
+          </div>
+        </td>
+        <td class="actions">
+          <div class="right">
+          <%= link_to '', edit_booking_path(booking), :class => "edit" %>
+          <%= link_to('', booking, :confirm => 'Are you sure?', :method => :delete, :class => "delete") if delete_link == true %>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+<% end %>

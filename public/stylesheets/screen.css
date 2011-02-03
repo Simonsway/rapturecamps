@@ -3,30 +3,48 @@ p {margin: 0px; padding: 0px;}
 .clear {clear: both; display: block;}
 .fright {float: right;}
 
-table {width:100%; border: 0px; border-collapse: collapse; border-spacing: 0px;}
+table {border: 0px; border-collapse: collapse; border-spacing: 0px; width: 100%;}
 td, th {border: 0px solid black; vertical-align: top; text-align: left;}
-th {color: #565353; text-transform: uppercase; font-size: 0.9em; padding-bottom: 5px;}
+th {color: #565353; text-transform: uppercase; font-size: 1em; padding-bottom: 5px; font-weight: 500;}
 td {color: #b9b9b9;}
 
-table.bookings {margin: 0px 0px 0px -20px; width: 850px;}
+#content_wrap {clear: both;}
+table.shadowed {width: 850px;}
+table.shadowed td.shadow_e {font-size: 0px; line-height: 1px; background-repeat: no-repeat;}
+table.shadowed td.center {width: 900px; padding: 20px; background-image: url('/images/content_back.png');}
+table.shadowed td.left_top {width: 12px; height: 12px; background-image: url('/images/left_top.png'); }
+table.shadowed td.right_top {width: 12px; height: 12px; background-image: url('/images/right_top.png'); }
+table.shadowed td.left_bottom {width: 12px; height: 12px; background-image: url('/images/left_bottom.png'); }
+table.shadowed td.right_bottom {width: 12px; height: 12px; background-image: url('/images/right_bottom.png'); }
+table.shadowed td.left {width: 12px; background-image: url('/images/left.png'); background-repeat: repeat-y;}
+table.shadowed td.right {width: 12px; background-image: url('/images/right.png'); background-repeat: repeat-y;}
+table.shadowed td.top {height: 12px; background-image: url('/images/top.png');  background-repeat: repeat-x;}
+table.shadowed td.bottom {height: 12px; background-image: url('/images/bottom.png');  background-repeat: repeat-x;}
+
+.bookings_wrap {position: relative; height: 142px;}
+.bookings_normal_wrap {position: relative; height: 33px;}
+table.bookings {left: -26px; width: 837px; position: absolute;}
 .padding_left {padding-left: 20px;}
-.padding_right {padding-right: 20px;}
 
 tr.top_info {background-image: url('/images/item_back.png'); background-position: left top; background-repeat: repeat-x; height: 64px;}
 tr.bottom_info {background-image: url('/images/item_back.png'); background-position: left bottom; background-repeat: repeat-x; height: 75px;}
 tr.bottom_info p {padding-bottom: 5px;}
-th.customer {width: 280px;}
-th.arrival {width: 145px;}
-th.pickup {}
-th.flight {width: 100px;}
+th.customer, td.customer {width: 290px;}
+th.arrival, td.arrival {width: 145px;}
+th.pickup, td.pickup {width: 180px;}
+th.camp, td.camp {width: 140px;}
+th.flight, td.flight {width: 80px;}
 td.customer {color: white; font-weight: bold; font-size: 1.2em;}
 td.arrival {color: white; font-weight: bold; font-size: 1.2em;}
 td.pickup {color: #3ebeea; font-weight: bold; font-size: 1.2em;}
+td.camp {color: #3ebeea; font-weight: bold; font-size: 1.2em;}
 td.flight {color: #3ebeea; text-transform: uppercase; font-weight: bold; font-size: 1.2em;}
 td.pickup.departure {color: #ae3636;}
+td.camp.departure {color: #ae3636;}
 td.flight.departure {color: #ae3636;}
 td.flight div.window {text-align: center;}
-td.actions {vertical-align: bottom; text-align: right; padding-bottom: 10px;}
+td.actions {vertical-align: bottom; text-align: right; padding-bottom: 10px; padding-right: 20px;}
+td.actions .right {float: right; }
 
 .window {position: relative; margin: 10px 17px 15px 0px; padding: 0px 15px 0px 10px; background-image: url('/images/window_back.png'); background-repeat: repeat-x; height: 41px; line-height: 41px;}
 .window .window_left {position: absolute; left: -7px; top: 0px; background-image: url('/images/window_left.png'); height: 41px; width: 7px;}
@@ -34,13 +52,11 @@ td.actions {vertical-align: bottom; text-align: right; padding-bottom: 10px;}
 
 #body_wrap {width: 850px; margin: 0px auto; position: relative;}
 
-#logo {display: block; background-image: url('/images/logo.png'); width: 245px; height: 77px; position: absolute; top: 30px; left: 30px;}
+#logo {display: block; background-image: url('/images/logo.png'); width: 245px; height: 77px; position: absolute; top: 20px; left: 10px;}
 
-.admin_links {height: 140px; float: right; color: #676969; text-align: right; margin-top: 30px;}
+.admin_links {height: 125px; float: right; color: #676969; text-align: right; margin-top: 30px; padding-right: 5px;}
 .admin_links a {color: white; font-size: 11px; line-height: 36px; text-align: center; text-decoration: none; text-transform: uppercase; margin-left: 10px; margin-top: 50px; display: block; float: left; background-image: url('/images/menu_button.png'); width: 120px; height: 36px;}
-.admin_links a.logout {color: #676969; font-size: 1em; line-height: 12px; text-decoration: none; text-transform: none; margin: 0px; display: inline; float: none; background-image: none;}
-
-#content_wrap {background-image: url('/images/content_back.png'); clear: both; padding: 20px; box-shadow: 0 0 10px 0 #555555; border-radius: 3px;}
+.admin_links a.logout {color: #676969; font-size: 1em; line-height: 12px; text-decoration: none; text-transform: none; margin: 0px 10px 0px 0px; display: inline; float: none; background-image: none;}
 
 .error_messages {color: red; font-weight: bold; margin-bottom: 5px;}
 
@@ -48,11 +64,12 @@ td.actions {vertical-align: bottom; text-align: right; padding-bottom: 10px;}
 
 form {margin-bottom: 10px;}
 form .window_clear {float: right; margin-right: 15px; height: 25px; padding-top: 15px;}
-form .window {width: 170px; float: right; padding-right: 5px; margin-top: 0px; margin-bottom: 0px; overflow: visible; text-overflow: visible;}
-form .window input, form .window select, form select {border: 0px; background-color: transparent; color: #ccc;}
+form .window {width: 240px; padding-right: 5px; margin-top: 0px; margin-bottom: 0px; overflow: visible; text-overflow: visible;}
+form .window input {border: 0px; background-color: transparent; color: #ccc; height: 30px; margin-top: 4px;}
+form .window select, form select {border: 0px;}
 form .window text {border: 0px; background-color: transparent; color: #ccc;}
 form .submit {background-color: #343235; border: 1px solid #bbbaba; border-radius: 3px; color: white; width: 80px; height: 25px; margin-right: 15px; margin-top: 10px;}
-form.no_window_float .window {float: none;}
+.filter_form form .window {float: right; width: 200px;}
 form label {margin: 5px 0px;}
 form textarea {color: #ccc; border-radius: 3px; border: 1px solid #555; background-color: #272725; box-shadow: 0 0 10px 0 #555555; margin-left: -5px; width: 500px; height: 200px;}
 form input {font-size: 1.4em; color: #ccc;}
@@ -67,4 +84,4 @@ a.delete {background-image: url('/images/icon_delete.png'); display: block; heig
 a.edit {background-image: url('/images/icon_edit.png'); display: block; height: 15px; width: 15px; float: left;}
 a.show {background-image: url('/images/icon_show.png'); display: block; height: 15px; width: 15px; float: left;}
 
-hr.shadow {background-image: url('/images/shadow.png'); background-position: center center; background-repeat: no-repeat; height: 5px; border: 0px; margin: 30px 0px;}
+hr.shadow {background-image: url('/images/shadow.png'); background-position: center center; background-repeat: no-repeat; height: 5px; border: 0px; margin: 60px 0px 30px 0px;}

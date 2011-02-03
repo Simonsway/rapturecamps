@@ -1,6 +1,6 @@
 <%= error_messages_for @object %>
 
-<%= form_for(@object, {}, :html => {:class => "no_window_float"}) do |f| %>
+<%= form_for(@object) do |f| %>
   <%= f.label :name %>
   <div class="window">
     <div class="window_left"></div>

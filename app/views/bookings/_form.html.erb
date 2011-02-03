@@ -1,6 +1,6 @@
 <%= error_messages_for @booking %>
 
-<%= form_for(@booking, {}, :html => {:class => "no_window_float"}) do |f| %>
+<%= form_for(@booking) do |f| %>
   <%= f.label :customer %>
   <div class="window">
     <div class="window_left"></div>
@@ -26,7 +26,7 @@
   <%= f.label :departure, :class=>"clear" %>
   <%= f.date_select :departure %>
   <%= f.label :pickup, :class=>"clear" %>
-  <%= f.datetime_select :pickup %>
+  <%= f.check_box :is_pickup %> <%= f.datetime_select :pickup %>
   <%= f.label :flight, :class=>"clear" %>
   <div class="window">
     <div class="window_left"></div>

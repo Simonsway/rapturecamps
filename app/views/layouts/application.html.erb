@@ -25,7 +25,11 @@
       </div>
       
       <div id="content_wrap">
-        <%= yield %>
+        <table class="shadowed">
+          <tr><td class="shadow_e left_top"></td><td class="shadow_e top"></td><td class="shadow_e right_top"></td></tr>
+          <tr><td class="shadow_e left"></td><td class="center"><%= yield %></td><td class="shadow_e right"></td></tr>
+          <tr><td class="shadow_e left_bottom"></td><td class="shadow_e bottom"></td><td class="shadow_e right_bottom"></td></tr>
+        </table>
       </div>
     </div>
   </body>

@@ -1,4 +1,4 @@
-<h1>Admins</h1>
+<h1><%= image_tag "admins.png", :alt => "admins" %></h1>
 
 <table>
   <tr>
@@ -12,8 +12,8 @@
       <td><%= obj.id %></td>
       <td><%= obj.login %></td>
       <td><%= obj.name %></td>
-      <td><%= obj.email %></td>
-      <td class="admin_links">
+      <td><%= mail_to obj.email %></td>
+      <td>
         <%= link_to '', edit_user_path(obj), :class => "edit" %>
         <%= link_to '', obj, :confirm => 'Are you sure?', :method => :delete, :class => "delete" %>
       </td>

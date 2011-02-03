@@ -11,16 +11,6 @@ class Booking < ActiveRecord::Base
   validates_associated :customer
   validates_associated :camp
   
-  # def customer_name
-    # customer.name if customer
-  # end
-
-  # def customer_name=(name)
-    # self.customer = Customer.find_by_name(name) unless name.blank?
-  # end
-  
-  #http://railscasts.com/episodes/102-auto-complete-association
-  
   def self.filter_conditions(params)
     cond = []
     include = []
@@ -47,7 +37,7 @@ class Booking < ActiveRecord::Base
     if params[:arrival] && params[:departure]
       a = date_from_options(params[:arrival])
       d = date_from_options(params[:departure])
-      cond << " DATE(arrival) >= DATE('#{a.to_s(:db)}') and DATE(departure) <= DATE('#{d.to_s(:db)}')"
+      cond << " (DATE(arrival) between DATE('#{a.to_s(:db)}') and DATE('#{d.to_s(:db)}') or DATE(departure) between DATE('#{a.to_s(:db)}') and DATE('#{d.to_s(:db)}') or (DATE(arrival) <= DATE('#{a.to_s(:db)}') and DATE(departure) >= DATE('#{d.to_s(:db)}')) )"
     end
     
     {:conditions => cond.join(" and "), :include => include}

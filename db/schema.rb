@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110126184500) do
+ActiveRecord::Schema.define(:version => 20110203213955) do
 
   create_table "bookings", :force => true do |t|
     t.integer  "customer_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20110126184500) do
     t.datetime "updated_at"
     t.integer  "camp_id"
     t.string   "ref"
+    t.boolean  "is_pickup",                  :default => true
   end
 
   create_table "camps", :force => true do |t|
