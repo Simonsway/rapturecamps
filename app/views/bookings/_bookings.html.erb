@@ -33,7 +33,11 @@
         <td class="pickup <%= "departure" if departure %>">
           <div class="window">
             <div class="window_left"></div>
-            <%= booking.is_pickup ? booking.pickup.strftime("%d-%m-%y / %H:%M") : "---" %>
+            <% if departure %>
+              <%= booking.departure.strftime("%d-%m-%y") %>
+            <% else %>
+              <%= booking.is_pickup ? booking.pickup.strftime("%d-%m-%y / %H:%M") : "---" %>
+            <% end %>
             <div class="window_right"></div>
           </div>
         </td>
