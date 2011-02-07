@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
   end
   
   def list
-    @bookings = Booking.find(:all, Booking.filter_conditions(params))
+    @bookings = Booking.find(:all, Booking.filter_conditions(params)).paginate(:per_page => 10, :page => params[:page])
   end
   
   def create

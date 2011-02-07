@@ -3,3 +3,5 @@
 <%= render :partial => "filter_form" %>
 
 <%= render :partial => "bookings", :locals => {:items => @bookings} %>
+
+<%= will_paginate @bookings %>

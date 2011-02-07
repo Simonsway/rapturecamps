@@ -85,3 +85,6 @@ a.edit {background-image: url('/images/icon_edit.png'); display: block; height: 
 a.show {background-image: url('/images/icon_show.png'); display: block; height: 15px; width: 15px; float: left;}
 
 hr.shadow {background-image: url('/images/shadow.png'); background-position: center center; background-repeat: no-repeat; height: 5px; border: 0px; margin: 60px 0px 30px 0px;}
+
+.pagination {margin-top: 20px; float: right; font-size: 14px;}
+.pagination a {color: white;}
