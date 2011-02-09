@@ -7,6 +7,7 @@
       <th class="customer padding_left">Customer</th>
       <th class="arrival">Arrival</th>
       <th class="pickup"><%= departure ? "Dropoff" : "Pickup" %></td>
+      <th class="room">Room</td>
       <th class="camp">Camp</td>
       <th class="flight">Flight</td>
     </tr>
@@ -41,6 +42,13 @@
             <div class="window_right"></div>
           </div>
         </td>
+        <td class="room">
+          <div class="window">
+            <div class="window_left"></div>
+            <%= booking.room %>
+            <div class="window_right"></div>
+          </div>
+        </td>
         <td class="camp <%= "departure" if departure %>">
           <div class="window">
             <div class="window_left"></div>
@@ -58,13 +66,12 @@
       </tr>
       <tr class="bottom_info">
         <td class="padding_left">
-          <p>ROOM: <%= booking.room %></p>
           <p>REF: <%= booking.ref %></p>
           <p>DEPARTURE: <%= booking.departure.strftime("%d-%m-%y / %H:%M") %></p>
         </td>
-        <td colspan="3">
+        <td colspan="4">
           <div style="float: left;">INFO: </div>
-          <div style="float: left; margin-left: 5px; width: 350px;">
+          <div style="float: left; margin-left: 5px; width: 350px; height: 56px; line-height: 14px; overflow-x: hidden; overflow-y: hidden;">
             <% booking.text.split("\n")[0..3].each do |t| %>
               <%= t %><br />
             <% end %>

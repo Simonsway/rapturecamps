@@ -3,14 +3,14 @@ p {margin: 0px; padding: 0px;}
 .clear {clear: both; display: block;}
 .fright {float: right;}
 
-table {border: 0px; border-collapse: collapse; border-spacing: 0px; width: 100%;}
-td, th {border: 0px solid black; vertical-align: top; text-align: left;}
+table {border: 0px solid black; border-collapse: collapse; border-spacing: 0px; width: 100%;}
+td, th {border: 0px solid black; vertical-align: top; text-align: left; padding: 0px;}
 th {color: #565353; text-transform: uppercase; font-size: 1em; padding-bottom: 5px; font-weight: 500;}
 td {color: #b9b9b9;}
 
 #content_wrap {clear: both;}
 table.shadowed {width: 850px;}
-table.shadowed td.shadow_e {font-size: 0px; line-height: 1px; background-repeat: no-repeat;}
+table.shadowed td.shadow_e {font-size: 12px; line-height: 12px; background-repeat: no-repeat;}
 table.shadowed td.center {width: 900px; padding: 20px; background-image: url('/images/content_back.png');}
 table.shadowed td.left_top {width: 12px; height: 12px; background-image: url('/images/left_top.png'); }
 table.shadowed td.right_top {width: 12px; height: 12px; background-image: url('/images/right_top.png'); }
@@ -23,16 +23,17 @@ table.shadowed td.bottom {height: 12px; background-image: url('/images/bottom.pn
 
 .bookings_wrap {position: relative; height: 142px;}
 .bookings_normal_wrap {position: relative; height: 33px;}
-table.bookings {left: -26px; width: 837px; position: absolute;}
+table.bookings {left: -23px; width: 837px; position: absolute;}
 .padding_left {padding-left: 20px;}
 
 tr.top_info {background-image: url('/images/item_back.png'); background-position: left top; background-repeat: repeat-x; height: 64px;}
 tr.bottom_info {background-image: url('/images/item_back.png'); background-position: left bottom; background-repeat: repeat-x; height: 75px;}
 tr.bottom_info p {padding-bottom: 5px;}
-th.customer, td.customer {width: 290px;}
+th.customer, td.customer {width: 250px;}
 th.arrival, td.arrival {width: 145px;}
-th.pickup, td.pickup {width: 180px;}
-th.camp, td.camp {width: 140px;}
+th.pickup, td.pickup {width: 160px;}
+th.room, td.room {width: 100px;}
+th.camp, td.camp {width: 100px;}
 th.flight, td.flight {width: 80px;}
 td.customer {color: white; font-weight: bold; font-size: 1.2em;}
 td.arrival {color: white; font-weight: bold; font-size: 1.2em;}
