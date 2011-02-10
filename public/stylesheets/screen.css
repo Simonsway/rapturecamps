@@ -38,9 +38,11 @@ th.flight, td.flight {width: 80px;}
 td.customer {color: white; font-weight: bold; font-size: 1.2em;}
 td.arrival {color: white; font-weight: bold; font-size: 1.2em;}
 td.pickup {color: #3ebeea; font-weight: bold; font-size: 1.2em;}
+td.room {color: #3ebeea; font-weight: bold; font-size: 1.2em;}
 td.camp {color: #3ebeea; font-weight: bold; font-size: 1.2em;}
 td.flight {color: #3ebeea; text-transform: uppercase; font-weight: bold; font-size: 1.2em;}
 td.pickup.departure {color: #ae3636;}
+td.room.departure {color: #ae3636;}
 td.camp.departure {color: #ae3636;}
 td.flight.departure {color: #ae3636;}
 td.flight div.window {text-align: center;}
