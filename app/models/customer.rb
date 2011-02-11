@@ -7,8 +7,7 @@ class Customer < ActiveRecord::Base
   validates :country, :presence => true
   validates :postcode, :presence => true
   validates :tel, :presence => true
-  validates :email, :presence => true,
-                    :length => {:minimum => 6, :maximum => 254},
+  validates :email, :length => {:minimum => 6, :maximum => 254},
                     :uniqueness => true,
                     :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
   
