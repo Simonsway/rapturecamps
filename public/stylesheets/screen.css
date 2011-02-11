@@ -31,9 +31,9 @@ tr.top_info {background-image: url('/images/item_back.png'); background-position
 tr.bottom_info {background-image: url('/images/item_back.png'); background-position: left bottom; background-repeat: repeat-x; height: 75px;}
 tr.bottom_info p {padding-bottom: 5px;}
 th.customer, td.customer {width: 250px;}
-th.arrival, td.arrival {width: 145px;}
-th.pickup, td.pickup {width: 160px;}
-th.room, td.room {width: 100px;}
+th.arrival, td.arrival {width: 125px;}
+th.pickup, td.pickup {width: 140px;}
+th.room, td.room {width: 140px;}
 th.camp, td.camp {width: 100px;}
 th.flight, td.flight {width: 80px;}
 td.customer {color: white; font-weight: bold; font-size: 1.2em;}
