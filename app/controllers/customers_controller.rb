@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   def index
-    @objects = Customer.find(:all, Customer.filter_conditions(params))
+    @objects = Customer.find(:all, Customer.filter_conditions(params)).paginate(:per_page => 10, :page => params[:page])
   end
   
   def new
